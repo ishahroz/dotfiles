@@ -26,28 +26,17 @@ To apply these configurations to your system, follow these steps:
 
 ## Brewfile
 
-If you use Homebrew to manage your packages, you can install the packages listed in the Brewfile included in this repository. Follow these steps:
-
-1. Ensure Homebrew is installed on your system. If it is not, you can install it with the following command:
-
-   ```sh
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-2. Install the packages from the Brewfile:
-   ```sh
-   brew bundle --file=/path/to/your/Brewfile
-   ```
-
-Replace `/path/to/your/Brewfile` with the actual path to the Brewfile in this repository.
+- I use [Homebrew](https://brew.sh/) and [`Brewfile`](./Brewfile) to manage my packages.
+- Make sure to install Homebrew first.
 
 ## Karabiner-Elements
 
 - I use [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) for keyboard key remapping.
-- My configurations can be found in `dot_config/private_karabiner/private_karabiner.json`.
+- My configurations can be found in [`dot_config/private_karabiner/private_karabiner.json`](./dot_config/private_karabiner/private_karabiner.json).
 - You can find more complex modification rules [here](https://ke-complex-modifications.pqrs.org/).
 
-## Hammerspoon
+## skhd
 
-- I use [Hammerspoon](https://www.hammerspoon.org/) to automate various tasks on my macOS.
-- My configurations can be found in `dot_hammerspoon/init.lua`.
+- I use [skhd](https://github.com/koekeishiya/skhd) for keyboard shortcuts.
+- Configurations can be found in [`dot_skhdrc`](./dot_skhdrc).
+- Read more about valid keywords [here](https://github.com/koekeishiya/skhd/issues/1).
