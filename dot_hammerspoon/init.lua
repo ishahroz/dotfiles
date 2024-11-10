@@ -10,7 +10,7 @@ keyMappings = {
     E = "",
     F = "Finder",
     G = "Google Chrome",
-    H = "",
+    H = "Hammerspoon",
     I = "IntelliJ IDEA",
     J = "",
     K = "",
@@ -41,7 +41,7 @@ for key, app in pairs(keyMappings) do
     end
 end
 
--- Function to quit the current application
+-- To quit the current application
 hs.hotkey.bind(hyper, "Q", function()
     local app = hs.application.frontmostApplication()
     if app then
@@ -49,7 +49,7 @@ hs.hotkey.bind(hyper, "Q", function()
     end
 end)
 
--- Function to reload Hammerspoon configuration
+-- To reload Hammerspoon configuration
 hs.hotkey.bind(hyper, "R", function()
     hs.reload()
 end)
