@@ -40,3 +40,9 @@ If you use Homebrew to manage your packages, you can install the packages listed
    ```
 
 Replace `/path/to/your/Brewfile` with the actual path to the Brewfile in this repository.
+
+## Karabiner-Elements Setup
+
+- I use [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) for keyboard key remapping.
+- My configurations can be found in `dot_config/private_karabiner/private_karabiner.json`.
+- You can find more complex modification rules [here](https://ke-complex-modifications.pqrs.org/).
