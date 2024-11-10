@@ -2,7 +2,7 @@
 
 Welcome to my Chezmoi configuration repository. This repository contains my personal dotfiles and configuration managed by [Chezmoi](https://www.chezmoi.io/).
 
-## Chezmoi Setup
+## Chezmoi
 
 To apply these configurations to your system, follow these steps:
 
@@ -24,7 +24,7 @@ To apply these configurations to your system, follow these steps:
    chezmoi apply
    ```
 
-## Brewfile Setup
+## Brewfile
 
 If you use Homebrew to manage your packages, you can install the packages listed in the Brewfile included in this repository. Follow these steps:
 
@@ -41,8 +41,13 @@ If you use Homebrew to manage your packages, you can install the packages listed
 
 Replace `/path/to/your/Brewfile` with the actual path to the Brewfile in this repository.
 
-## Karabiner-Elements Setup
+## Karabiner-Elements
 
 - I use [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) for keyboard key remapping.
 - My configurations can be found in `dot_config/private_karabiner/private_karabiner.json`.
 - You can find more complex modification rules [here](https://ke-complex-modifications.pqrs.org/).
+
+## Hammerspoon
+
+- I use [Hammerspoon](https://www.hammerspoon.org/) to automate various tasks on my macOS.
+- My configurations can be found in `dot_hammerspoon/init.lua`.
