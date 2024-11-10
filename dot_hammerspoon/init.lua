@@ -15,7 +15,7 @@ keyMappings = {
     J = "",
     K = "",
     L = "",
-    M = "",
+    M = "Spotify",
     N = "Notion Calendar",
     O = "",
     P = "PyCharm",
@@ -29,7 +29,7 @@ keyMappings = {
     X = "",
     Y = "",
     Z = "",
-    ["="] = "Calculator",
+    ["\\"] = "Google Chat",
 }
 
 -- Bind the Hyper key to the keyMappings
