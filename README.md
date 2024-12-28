@@ -40,3 +40,10 @@ To apply these configurations to your system, follow these steps:
 - I use [skhd](https://github.com/koekeishiya/skhd) for keyboard shortcuts.
 - Configurations can be found in [`dot_skhdrc`](./dot_skhdrc).
 - Read more about valid keywords [here](https://github.com/koekeishiya/skhd/issues/1).
+
+## Raycast
+
+- I use [Raycast](https://www.raycast.com/) for shortcuts and quick actions.
+- Configurations can be found in [`Raycast.rayconfig`](./raycast/Raycast.rayconfig).
+- To import the configuration, open Raycast and run command `Import Settings & Data`.
+- To export the configuration, open Raycast and run command `Export Settings & Data`.
