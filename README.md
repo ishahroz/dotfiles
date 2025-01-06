@@ -47,3 +47,21 @@ To apply these configurations to your system, follow these steps:
 - Configurations can be found in [`Raycast.rayconfig`](./raycast/Raycast.rayconfig).
 - To import the configuration, open Raycast and run command `Import Settings & Data`.
 - To export the configuration, open Raycast and run command `Export Settings & Data`.
+
+## macOS Default Settings
+
+### Increase Key Repeat Rate
+
+The default key repeat rate is too slow when moving the cursor using keyboard.
+
+- `KeyRepeat` - default minimum is `2` (`30 ms`)
+- `InitialKeyRepeat` - default minimum is `15` (`225 ms`)
+
+To increase the key repeat rate:
+
+```bash
+defaults write -g KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 15
+```
+
+Note: Check this website to play more with the values: https://mac-key-repeat.zaymon.dev.
