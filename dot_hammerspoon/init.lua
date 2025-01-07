@@ -1,5 +1,22 @@
 require "slowq"  -- Slow quit apps
 
+local hyper = {"cmd", "alt", "ctrl", "shift"}
+
+hs.loadSpoon("RecursiveBinder")
+
+local singleKey = spoon.RecursiveBinder.singleKey
+
+local keyMap = {
+--   [singleKey('b', 'browser')] = function() hs.application.launchOrFocus("Firefox") end,
+--   [singleKey('t', 'terminal')] = function() hs.application.launchOrFocus("Terminal") end,
+  [singleKey('\\', 'raycast')] = {
+    [singleKey('g', 'github')] = function() hs.urlevent.openURL("https://github.com") end,
+    [singleKey('y', 'youtube')] = function() hs.urlevent.openURL("https://youtube.com") end
+  }
+}
+
+hs.hotkey.bind(hyper, 'r', spoon.RecursiveBinder.recursiveBind(keyMap))
+
 -- -- Define the Hyper key as 'Capslock' (the Hyper key I set in Karabiner Elements)
 -- local hyper = {"cmd", "alt", "ctrl", "shift"}
 
