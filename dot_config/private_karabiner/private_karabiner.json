@@ -9,19 +9,19 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Transform Caps Lock into a Hyper Key: Left Control + Option + Command + Shift",
+                        "description": "Caps Lock: 'Escape' when pressed alone, 'F19' when held or combined.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "modifiers": ["left_option", "left_command", "left_shift"]
-                                    }
-                                ],
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 150,
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
+                                },
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "to_if_held_down": [{ "key_code": "f19" }],
                                 "type": "basic"
                             }
                         ]
