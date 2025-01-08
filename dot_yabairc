@@ -1,0 +1,15 @@
+# Exclude Applications from tiling
+yabai -m rule --add app="^WhatsApp$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Slack$" manage=off
+
+# Open Applications in Full Screen Always
+yabai -m signal --add event=application_launched app="Slack" action="yabai -m window --toggle zoom-fullscreen"
+yabai -m signal --add event=application_launched app="WhatsApp" action="yabai -m window --toggle zoom-fullscreen"
+
+##### JankyBorders #####
+
+# Should always be at the end of file
+# To add border to focused windows
+
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
