@@ -50,18 +50,4 @@ To apply these configurations to your system, follow these steps:
 
 ## macOS Default Settings
 
-### Increase Key Repeat Rate
-
-The default key repeat rate is too slow when moving the cursor using keyboard.
-
-- `KeyRepeat` - default minimum is `2` (`30 ms`)
-- `InitialKeyRepeat` - default minimum is `15` (`225 ms`)
-
-To increase the key repeat rate:
-
-```bash
-defaults write -g KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 15
-```
-
-Note: Check this website to play more with the values: https://mac-key-repeat.zaymon.dev.
+- I use [`setup.sh`](./setup.sh) to set up macOS default settings.
