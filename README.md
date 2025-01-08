@@ -35,12 +35,6 @@ To apply these configurations to your system, follow these steps:
 - My configurations can be found in [`dot_config/private_karabiner/private_karabiner.json`](./dot_config/private_karabiner/private_karabiner.json).
 - You can find more complex modification rules [here](https://ke-complex-modifications.pqrs.org/).
 
-## skhd
-
-- I use [skhd](https://github.com/koekeishiya/skhd) for keyboard shortcuts.
-- Configurations can be found in [`dot_skhdrc`](./dot_skhdrc).
-- Read more about valid keywords [here](https://github.com/koekeishiya/skhd/issues/1).
-
 ## Raycast
 
 - I use [Raycast](https://www.raycast.com/) for shortcuts and quick actions.
