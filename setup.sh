@@ -21,3 +21,8 @@ defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon-c
 # Increasing key repeat rate
 defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 15
+
+
+# Disable sound on startup
+# TODO: Enable the Sudo first
+# sudo nvram StartupMute=%01
