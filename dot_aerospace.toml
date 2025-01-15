@@ -44,7 +44,7 @@ if.app-id = 'md.obsidian'				# Obsidian
 run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Notes'				# Apple Notes
+if.app-id = 'notion.id'					# Notion
 run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
@@ -61,6 +61,10 @@ run = 'move-node-to-workspace Communication'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'			# Slack
+run = 'move-node-to-workspace Communication'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'				# Discord
 run = 'move-node-to-workspace Communication'
 
 [[on-window-detected]]
@@ -84,7 +88,23 @@ if.app-id = 'com.todesktop.230313mzl4w4u92'		# Cursor
 run = ['layout floating', 'move-node-to-workspace Editor']
 
 [[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'			# Todoist
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'				# Apple Notes
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.finder'				# Finder
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'		# System Settings / Preferences
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.raycast.macos'				# Raycast
 run = ['layout floating']
 
 [[on-window-detected]]
