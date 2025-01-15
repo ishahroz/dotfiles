@@ -40,6 +40,10 @@ outer.right =      0
 # =================================================================
 
 [[on-window-detected]]
+if.app-id = 'com.apple.mail'				# Apple Mail
+run = 'move-node-to-workspace Mail'
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'				# Obsidian
 run = 'move-node-to-workspace Notes'
 
@@ -69,7 +73,23 @@ run = 'move-node-to-workspace Communication'
 
 [[on-window-detected]]
 if.app-id = 'com.cron.electron'				# Notion Calendar
-run = 'move-node-to-workspace 9-Calendar'
+run = 'move-node-to-workspace 9-Planner'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'				# Apple Calendar
+run = 'move-node-to-workspace 9-Planner'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'			# Apple Reminders
+run = 'move-node-to-workspace 9-Planner'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'				# Apple Notes
+run = ['layout floating', 'move-node-to-workspace 9-Planner']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'			# Apple Reminders
+run = ['layout floating', 'move-node-to-workspace 9-Planner']
 
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'			# iTerm2 
@@ -86,14 +106,6 @@ run = ['layout floating', 'move-node-to-workspace Editor']
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'		# Cursor
 run = ['layout floating', 'move-node-to-workspace Editor']
-
-[[on-window-detected]]
-if.app-id = 'com.todoist.mac.Todoist'			# Todoist
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'				# Apple Notes
-run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'				# Finder
