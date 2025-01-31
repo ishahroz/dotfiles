@@ -44,6 +44,10 @@ if.app-id = 'com.apple.mail'				# Apple Mail
 run = 'move-node-to-workspace Mail'
 
 [[on-window-detected]]
+if.app-id = 'com.apple.Notes'				# Apple Notes
+run = ['layout floating', 'move-node-to-workspace Notes']
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'				# Obsidian
 run = 'move-node-to-workspace Notes'
 
@@ -72,24 +76,12 @@ if.app-id = 'com.hnc.Discord'				# Discord
 run = 'move-node-to-workspace Communication'
 
 [[on-window-detected]]
-if.app-id = 'com.cron.electron'				# Notion Calendar
-run = 'move-node-to-workspace 9-Planner'
-
-[[on-window-detected]]
 if.app-id = 'com.apple.iCal'				# Apple Calendar
 run = 'move-node-to-workspace 9-Planner'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.reminders'			# Apple Reminders
+if.app-id = 'com.culturedcode.ThingsMac'		# Things 3
 run = 'move-node-to-workspace 9-Planner'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'				# Apple Notes
-run = ['layout floating', 'move-node-to-workspace 9-Planner']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.reminders'			# Apple Reminders
-run = ['layout floating', 'move-node-to-workspace 9-Planner']
 
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'			# iTerm2 
