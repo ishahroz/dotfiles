@@ -96,6 +96,14 @@ if.app-id = 'com.microsoft.VSCode'			# VS Code
 run = ['layout floating', 'move-node-to-workspace Editor']
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.pycharm'			# PyCharm
+run = ['layout floating', 'move-node-to-workspace PyCharm']
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'			# IntelliJ IDEA 
+run = ['layout floating', 'move-node-to-workspace IntelliJ']
+
+[[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'		# Cursor
 run = ['layout floating', 'move-node-to-workspace Editor']
 
