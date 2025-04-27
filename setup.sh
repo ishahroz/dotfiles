@@ -34,3 +34,7 @@ defaults write -g InitialKeyRepeat -int 15
 
 # Enable 'Group Windows by Application' option (it has to be if using Aerospace otherwise things dont work fine when you zoom out using 3 fingers up)
 defaults write com.apple.dock expose-group-apps -bool true && killall Dock
+
+
+# Set double-click on title bar to "fill"
+defaults write -g AppleActionOnDoubleClick 'Fill' && killall Finder
