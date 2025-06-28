@@ -1,39 +1,46 @@
 {
-    "global": {
-        "ask_for_confirmation_before_quitting": false,
-        "enable_notification_window": false,
-        "show_in_menu_bar": false
-    },
+    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Caps Lock: 'Escape' when pressed alone, 'F19' when held or combined.",
+                        "description": "Caps Lock remapped to 'F19' as a Hyper Key",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 140,
-                                    "basic.to_if_held_down_threshold_milliseconds": 190
-                                },
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "to_if_held_down": [{ "key_code": "f19" }],
+                                "to": [{ "key_code": "f19" }],
                                 "type": "basic"
                             }
                         ]
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 8467,
+                        "vendor_id": 16700
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        }
+                    ]
+                }
+            ],
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": {
-                "indicate_sticky_modifier_keys_state": false,
-                "keyboard_type_v2": "ansi"
-            }
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
 }
