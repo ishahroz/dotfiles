@@ -1,8 +1,6 @@
 after-login-command = []
 
-after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0' # Activate JankyBorders
-]
+after-startup-command = []
 
 start-at-login = true 
 
@@ -41,7 +39,11 @@ outer.right =      0
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'				# Apple Mail
-run = 'move-node-to-workspace Mail'
+run = ['layout floating', 'move-node-to-workspace Mail']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'			# MS Outlook
+run = ['layout floating', 'move-node-to-workspace Mail']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'				# Apple Notes
@@ -65,15 +67,19 @@ run = 'move-node-to-workspace Browser'
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'			# WhatsApp
-run = 'move-node-to-workspace Communication'
+run = 'move-node-to-workspace Social'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'			# Slack
-run = 'move-node-to-workspace Communication'
+run = 'move-node-to-workspace Work'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'			# MS Teams
+run = 'move-node-to-workspace Work'
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'				# Discord
-run = 'move-node-to-workspace Communication'
+run = 'move-node-to-workspace Social'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'				# Apple Calendar
@@ -123,7 +129,18 @@ run = ['layout floating']
 if.app-id = 'org.hammerspoon.Hammerspoon'		# Hammerspoon
 run = ['layout floating']
 
+# [[on-window-detected]]
+# if.app-id = 'com.upwork.Upwork'               		# Upwork Tracker
+# run = ['layout floating', 'move-node-to-workspace Work']
+
 [[on-window-detected]]					# Make all the other applications / windows float in 0-Other Workspace
 check-further-callbacks = true
 run = ['layout floating', 'move-node-to-workspace 0-Other']
 
+[workspace-to-monitor-force-assignment]			# In case of multiple monitors, force assign each workspace to a specific monitor
+Browser = 'secondary'
+Terminal = 'secondary'
+Editor = 'secondary'
+Notes = 'secondary'
+Mail = 'main'
+Social = 'main'
