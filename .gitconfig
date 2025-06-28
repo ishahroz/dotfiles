@@ -1,0 +1,10 @@
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[user]
+        name = Shahroz Ahmad
+        email = ishahrozahmad90@gmail.com
+[core]
+	excludesFile = /Users/ishahroz/.gitignore_global
