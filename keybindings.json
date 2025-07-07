@@ -1,0 +1,32 @@
+// VS Code / Cursor Key Bindings
+
+[
+    {
+        "key": "cmd+o",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+shift+o",
+        "command": "workbench.action.files.openFileFolder"
+    },
+    {
+        "key": "cmd+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+]",
+        "command": "aichat.newchataction"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "workbench.action.showNextWindowTab"
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "workbench.action.showPreviousWindowTab"
+    }
+]
