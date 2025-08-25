@@ -2,3 +2,4 @@
 *.DS_Store
 .cursorindexingignore
 .specstory/
+.claude/
