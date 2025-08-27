@@ -48,4 +48,5 @@ To apply these configurations to your system, follow these steps:
 
 ## Claude Code
 
-- I use [`statusline.sh`](./claude/statusline.sh) for the CC status line configurations. Make sure to always make this file executable when running for the first time (e.g: fresh dotfiles load) by executing this command: `chmod +x ~/.claude/statusline.sh`.
+- I use [ccstatusline](https://github.com/sirmalloc/ccstatusline) to configure the CC status line and save the settings at [`dot_config/ccstatusline/settings.json`](./dot_config/ccstatusline/settings.json).
+- This settings file then gets loaded up by the CC [`settings.json`](./.claude/settings.json).
