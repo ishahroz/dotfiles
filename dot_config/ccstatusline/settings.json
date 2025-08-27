@@ -33,7 +33,7 @@
         "type": "block-timer",
         "color": "brightRed",
         "metadata": {
-          "display": "time"
+          "display": "progress-short"
         }
       }
     ],
