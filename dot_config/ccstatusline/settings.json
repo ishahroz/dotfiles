@@ -1,0 +1,63 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "1",
+        "type": "model",
+        "color": "green"
+      },
+      {
+        "id": "3",
+        "type": "output-style",
+        "color": "brightBlack"
+      },
+      {
+        "id": "5",
+        "type": "context-percentage",
+        "color": "brightBlue"
+      }
+    ],
+    [
+      {
+        "id": "056a921c-cc31-4412-82f5-5fad361ffe74",
+        "type": "version"
+      },
+      {
+        "id": "08a214f6-cef8-45c6-b8d8-df0c1e0d19e4",
+        "type": "session-clock",
+        "color": "brightYellow"
+      },
+      {
+        "id": "ec2d3e5b-78ba-4223-a46c-e70865f8067d",
+        "type": "block-timer",
+        "color": "brightRed",
+        "metadata": {
+          "display": "time"
+        }
+      }
+    ],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "defaultPadding": " ",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "powerline": {
+    "enabled": true,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [
+      ""
+    ],
+    "theme": "nord",
+    "autoAlign": false
+  }
+}
