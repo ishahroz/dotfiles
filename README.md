@@ -45,3 +45,7 @@ To apply these configurations to your system, follow these steps:
 ## macOS Default Settings
 
 - I use [`setup.sh`](./setup.sh) to set up macOS default settings.
+
+## Claude Code
+
+- I use [`statusline.sh`](./claude/statusline.sh) for the CC status line configurations. Make sure to always make this file executable when running for the first time (e.g: fresh dotfiles load) by executing this command: `chmod +x ~/.claude/statusline.sh`.
