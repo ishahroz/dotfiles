@@ -1,3 +1,6 @@
+################### Default `.stow-local-ignore` file #######################
+# Source: https://www.gnu.org/software/stow/manual/html_node/Types-And-Syntax-Of-Ignore-Lists.html
+
 # Comments and blank lines are allowed.
 
 RCS
@@ -21,5 +24,8 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+
+################# Personally managed list ##################
 
 Makefile
