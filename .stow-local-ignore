@@ -28,5 +28,9 @@ _darcs
 
 ################# Personally managed list ##################
 
-Makefile
+raycast\
+scripts\
+vscode\
+
 Brewfile
+Makefile
