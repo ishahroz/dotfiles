@@ -1,1 +1,3 @@
-!.claude/
+# `git/.gitignore_global` ignores `.claude` on global level (user managed and claude code managed)
+# but i want to keep track of changes of `claude/.claude` in this dotfiles repo
+!claude/
