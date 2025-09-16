@@ -47,7 +47,7 @@ make sync-brew
 
 # TODO:
 
-- document how to setup new macOS fresh macOS setup
-- use nix darwin to manage all the configurations
-- document Windows nixos wsl configurations as well (mostly to enable me to work on Windows laptops)
-- port macOS settings / configurations for linux as well
+- Document how to set up a fresh macOS setup using this repo (install apps, create symlinks, etc.)
+- Use [nix-darwin](https://github.com/nix-darwin/nix-darwin) to manage all the configurations.
+- Develop and document Windows NixOS WSL configurations as well (mostly to enable me to work on Windows laptops)
+- Develop and document a variant using [Home Manager](https://nix-community.github.io/home-manager/) to make these dotfiles work on Ubuntu. **REQUIRES** learning more about NixOS, Home Manager, and [Flakes](https://nixos.wiki/wiki/Flakes).
