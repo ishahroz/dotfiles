@@ -10,9 +10,6 @@
 # https://github.com/joshmedeski/sesh
 
 sort_order = ["tmux", "config"]
-# sort_order = ["tmux", "config", "tmuxinator", "zoxide"]
-
-# default
 
 [default_session]
 startup_command = "ls"
@@ -23,29 +20,27 @@ preview_command = "eza --all --git --icons --color=always {}"
 name = "home (~)"
 path = "~"
 disable_startup_command = true
-# startup_command = "l"
-
 
 [[session]]
-name = "Downloads 📥"
+name = "downloads (📥)"
 path = "~/Downloads"
-startup_command = "ls"
+startup_command = "yazi"
 
 [[session]]
-name = "skilledin"
-path = "~/Desktop/1. PROJECTS/skilledin"
+name = "dotfiles"
+path = "~/dotfiles"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "tmux config"
-path = "~"
+path = "~/dotfiles/tmux"
 startup_command = "nvim .tmux.conf"
 preview_command = "bat --color=always ~/.tmux.conf"
 
 [[session]]
 name = "zsh config"
-path = "~"
+path = "~/dotfiles/zsh"
 startup_command = "nvim .zshrc"
 preview_command = "bat --color=always ~/.zshrc"
 
@@ -57,6 +52,30 @@ preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "sesh config"
-path = "~/.config/sesh"
+path = "~/dotfiles/config/.config/sesh"
 startup_command = "nvim sesh.toml"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "alacritty config"
+path = "~/dotfiles/config/.config/alacritty"
+startup_command = "nvim alacritty.toml"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "yazi config"
+path = "~/dotfiles/config/.config/yazi"
+startup_command = "ls"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "nvim config"
+path = "~/dotfiles/config/.config/nvim"
+startup_command = "ls"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "skilledin"
+path = "~/Desktop/1. PROJECTS/skilledin"
+startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
