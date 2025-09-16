@@ -1,5 +1,7 @@
 # dotfiles
 
+**We will clone this repo in the home directory `~`.**
+
 ## GNU Stow
 
 I manage my dotfiles and macOS configurations using [GNU Stow](https://www.gnu.org/software/stow/); which is a symlink farm manager. The actual files will live in this repo and the symlinks will be created.
