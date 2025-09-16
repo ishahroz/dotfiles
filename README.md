@@ -4,11 +4,13 @@
 
 I manage my dotfiles and macOS configurations using [GNU Stow](https://www.gnu.org/software/stow/); which is a symlink farm manager. The actual files will live in this repo and the symlinks will be created.
 
-[`.stow-local-ignore`](./.stow-local-ignore) will be used to ignore creating symlinks for files resiign in this repo when we run `stow .`.
+[`.stow-local-ignore`](./.stow-local-ignore) will be used to ignore creating symlinks for files residing in this repo when we run `stow .`.
 
-There is concept of package in GNU Stow. Where we can consolidate files related to single application. For example `.aerospace.toml` should be saved in `~/.aerospaace.toml` by default but we save files inside `aerospace` folder. `aerospace` becomes a package and we can create symlink for indv packages using `stow <package_name>`. Int this case, `stow aerospace`.
+There is a concept of packages in GNU Stow. Where we can consolidate files related to a single application. For example [`.aerospace.toml`](./aerospace/.aerospace.toml) should be saved in `~/.aerospace.toml` by default but we save files inside the `aerospace` folder. `aerospace` becomes a package and we can create symlinks for individual packages using `stow <package_name>`. In this case, `stow aerospace`.
 
-Stow is smart enough to know what package is and how to create symlinks for those package. `config` folder is a very good way to undestand this concept. We have `config/.config`. Symlinks for all the child folders in `config/.config/*` will be crated and copied like `~/.config/*`.
+Stow is smart enough to know what a package is and how to create symlinks for those packages. The [`config`](./config/) folder is a very good way to understand this concept. We have `config/.config`. Symlinks for all the child folders in `config/.config/*` will be created and copied like `~/.config/*`.
+
+To create symlinks for all the packages and files, we can just run `stow .` (I have not tested this myself, maybe will try when I next do a fresh install of macOS or new machine).
 
 ## Homebrew
 
@@ -41,7 +43,7 @@ I mainly use [Homebrew](https://brew.sh/) for installing most of the system appl
 
 # TODO:
 
-- document how to setup new macos fresh macos setup
-- use nix darwn to manage all the configurations
-- document window nixos wsl configuratiosn as well (mostly to enable me to work on Windows laptops)
+- document how to setup new macOS fresh macOS setup
+- use nix darwin to manage all the configurations
+- document Windows nixos wsl configurations as well (mostly to enable me to work on Windows laptops)
 - port macOS settings / configurations for linux as well
