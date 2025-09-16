@@ -14,27 +14,31 @@ To create symlinks for all the packages and files, we can just run `stow .` (I h
 
 ## Homebrew
 
-I mainly use [Homebrew](https://brew.sh/) for installing most of the system applications. #TODO:
+I mainly use [Homebrew](https://brew.sh/) for installing most of the system applications and utilities.
 
-- I use [Homebrew](https://brew.sh/) and [`Brewfile`](./Brewfile) to manage my packages.
-- Make sure to install Homebrew first.
+- [`Brewfile`](./Brewfile) tracks all the applications and utilities I have installed on my system.
+- We can sync and update Brewfile using
+
+```zsh
+make sync-brew
+```
 
 ## Karabiner-Elements
 
 - I use [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) for keyboard key remapping.
-- My configurations can be found in [`dot_config/private_karabiner/private_karabiner.json`](./dot_config/private_karabiner/private_karabiner.json).
+- My configurations can be found in [`config/.config/karabiner/karabiner.json`](./config/.config/karabiner/karabiner.json).
 - You can find more complex modification rules [here](https://ke-complex-modifications.pqrs.org/).
 
 ## Raycast
 
 - I use [Raycast](https://www.raycast.com/) for shortcuts and quick actions.
 - Configurations can be found in [`Raycast.rayconfig`](./raycast/Raycast.rayconfig).
-- To import the configuration, open Raycast and run command `Import Settings & Data`.
-- To export the configuration, open Raycast and run command `Export Settings & Data`.
+- To import the configuration, open Raycast and run the command `Import Settings & Data`.
+- To export the configuration, open Raycast and run the command `Export Settings & Data`.
 
 ## macOS Default Settings
 
-- I use [`setup.sh`](./setup.sh) to set up macOS default settings.
+- I use [`scripts/setup.sh`](./scripts/setup.sh) to set up macOS default settings.
 
 ## Claude Code
 
