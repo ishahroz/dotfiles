@@ -1,30 +1,18 @@
-# README
+# dotfiles
 
-Welcome to my Chezmoi configuration repository. This repository contains my personal dotfiles and configuration managed by [Chezmoi](https://www.chezmoi.io/).
+## GNU Stow
 
-## Chezmoi
+I manage my dotfiles and macOS configurations using [GNU Stow](https://www.gnu.org/software/stow/); which is a symlink farm manager. The actual files will live in this repo and the symlinks will be created.
 
-To apply these configurations to your system, follow these steps:
+[`.stow-local-ignore`](./.stow-local-ignore) will be used to ignore creating symlinks for files resiign in this repo when we run `stow .`.
 
-1. Install Chezmoi:
+There is concept of package in GNU Stow. Where we can consolidate files related to single application. For example `.aerospace.toml` should be saved in `~/.aerospaace.toml` by default but we save files inside `aerospace` folder. `aerospace` becomes a package and we can create symlink for indv packages using `stow <package_name>`. Int this case, `stow aerospace`.
 
-   ```sh
-   sh -c "$(curl -fsLS get.chezmoi.io)"
-   ```
+Stow is smart enough to know what package is and how to create symlinks for those package. `config` folder is a very good way to undestand this concept. We have `config/.config`. Symlinks for all the child folders in `config/.config/*` will be crated and copied like `~/.config/*`.
 
-2. Initialize Chezmoi with this repository:
+## Homebrew
 
-   ```sh
-   chezmoi init <your-repo-url>
-   ```
-
-3. Apply the configurations:
-
-   ```sh
-   chezmoi apply
-   ```
-
-## Brewfile
+I mainly use [Homebrew](https://brew.sh/) for installing most of the system applications. #TODO:
 
 - I use [Homebrew](https://brew.sh/) and [`Brewfile`](./Brewfile) to manage my packages.
 - Make sure to install Homebrew first.
@@ -50,3 +38,10 @@ To apply these configurations to your system, follow these steps:
 
 - I use [ccstatusline](https://github.com/sirmalloc/ccstatusline) to configure the CC status line and save the settings at [`dot_config/ccstatusline/settings.json`](./dot_config/ccstatusline/settings.json).
 - This settings file then gets loaded up by the CC [`settings.json`](./.claude/settings.json).
+
+# TODO:
+
+- document how to setup new macos fresh macos setup
+- use nix darwn to manage all the configurations
+- document window nixos wsl configuratiosn as well (mostly to enable me to work on Windows laptops)
+- port macOS settings / configurations for linux as well
