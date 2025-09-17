@@ -79,3 +79,9 @@ name = "skilledin"
 path = "~/Desktop/1. PROJECTS/skilledin"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "gtdust"
+path = "~/Desktop/1. PROJECTS/gtdust"
+startup_command = "ls"
+preview_command = "eza --all --git --icons --color=always {}"

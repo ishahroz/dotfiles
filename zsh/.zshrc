@@ -146,3 +146,6 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# For rustup
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
