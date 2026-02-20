@@ -85,9 +85,3 @@ name = "gtdust"
 path = "~/Desktop/1. PROJECTS/gtdust"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
-
-[[session]]
-name = "learn-rust"
-path = "~/Desktop/1. PROJECTS/learn-rust"
-startup_command = "ls"
-preview_command = "eza --all --git --icons --color=always {}"
