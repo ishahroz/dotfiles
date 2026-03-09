@@ -149,3 +149,63 @@ source <(fzf --zsh)
 
 # For rustup
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+
+# t command
+t() {
+  case "${1:-}" in
+    "")
+      figlet -f ansishadow "T COMMAND"
+      echo "Usage: t [command]"
+      echo
+      echo "Commands:"
+      echo "  t a                 Attach to tmux"
+      echo "  t sessions          List running tmux sessions"
+      echo "  t config            List configured sesh workspaces"
+      echo "  t ls                Show running sessions + configured workspaces"
+      echo "  t connect <name>    Connect to workspace"
+      echo "  t c <name>          Short for connect"
+      return
+      ;;
+
+    a)
+      if command tmux has-session 2>/dev/null; then
+        command tmux attach
+      else
+        echo "No running tmux session to attach to."
+        return 1
+      fi
+      ;;
+
+    sessions)
+      command tmux ls 2>/dev/null || echo "No running tmux sessions."
+      ;;
+
+    config)
+      sesh list --config
+      ;;
+
+    ls)
+      echo "Running tmux sessions:"
+      command tmux ls 2>/dev/null || echo "No running tmux sessions."
+      echo
+      echo "Configured sesh workspaces:"
+      sesh list --config
+      ;;
+
+    connect|c)
+      if [ -n "$2" ]; then
+        sesh connect "$2"
+      else
+        echo "Usage: t connect <workspace>"
+        return 1
+      fi
+      ;;
+
+    *)
+      echo "Unknown command."
+      echo
+      echo "Usage: t [a|sessions|config|ls|connect <name>]"
+      return 1
+      ;;
+  esac
+}
