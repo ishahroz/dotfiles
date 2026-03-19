@@ -150,6 +150,9 @@ source <(fzf --zsh)
 # For rustup
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
+# For cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # t command
 t() {
   case "${1:-}" in
