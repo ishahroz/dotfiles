@@ -153,6 +153,9 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 # For cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# For Doom Emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 # t command
 t() {
   case "${1:-}" in
