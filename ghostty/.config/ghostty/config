@@ -1,0 +1,13 @@
+# Theme (Catppuccin Mocha)
+theme = Catppuccin Mocha
+
+# Terminal
+term = xterm-256color
+
+# Window appearance
+background-opacity = 0.8
+background-blur = true
+
+# Font
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 15
