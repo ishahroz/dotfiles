@@ -4,11 +4,11 @@ return {
 
     keys = {
       {
-        "<leader>z",
+        "<leader>z", -- key mapping
         function()
           require("zen-mode").toggle()
         end,
-        desc = "Toggle Zen Mode", -- toggle zen
+        desc = "Toggle Zen Mode",
       },
     },
 
@@ -23,13 +23,10 @@ return {
 
       plugins = {
         gitsigns = {
-          enabled = true, -- keep git signs
+          enabled = true, -- hide git signs
         },
         tmux = {
           enabled = true, -- hide tmux statusline
-        },
-        twilight = {
-          enabled = true, -- dim inactive code
         },
       },
     },
