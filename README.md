@@ -10,7 +10,7 @@ I manage my dotfiles and macOS configurations using [GNU Stow](https://www.gnu.o
 
 There is a concept of packages in GNU Stow. Where we can consolidate files related to a single application. For example [`.aerospace.toml`](./aerospace/.aerospace.toml) should be saved in `~/.aerospace.toml` by default but we save files inside the `aerospace` folder. `aerospace` becomes a package and we can create symlinks for individual packages using `stow <package_name>`. In this case, `stow aerospace`.
 
-Stow is smart enough to know what a package is and how to create symlinks for those packages. The [`config`](./config/) folder is a very good way to understand this concept. We have `config/.config`. Symlinks for all the child folders in `config/.config/*` will be created and copied like `~/.config/*`.
+Stow is smart enough to know what a package is and how to create symlinks for those packages. 
 
 To create symlinks for all the packages and files, we can just run `stow .` (I have not tested this myself, maybe will try when I next do a fresh install of macOS or new machine).
 
@@ -28,7 +28,7 @@ make sync-brew
 ## Karabiner-Elements
 
 - I use [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) for keyboard key remapping.
-- My configurations can be found in [`config/.config/karabiner/karabiner.json`](./config/.config/karabiner/karabiner.json).
+- My configurations can be found in [`karabiner/.config/karabiner/karabiner.json`](./karabiner/.config/karabiner/karabiner.json).
 - You can find more complex modification rules [here](https://ke-complex-modifications.pqrs.org/).
 
 ## Raycast
@@ -44,8 +44,8 @@ make sync-brew
 
 ## Claude Code
 
-- I use [ccstatusline](https://github.com/sirmalloc/ccstatusline) to configure the CC status line and save the settings at [`dot_config/ccstatusline/settings.json`](./dot_config/ccstatusline/settings.json).
-- This settings file then gets loaded up by the CC [`settings.json`](./.claude/settings.json).
+- I use [ccstatusline](https://github.com/sirmalloc/ccstatusline) to configure the CC status line and save the settings at [`ccstatusline/.config/ccstatusline/settings.json`](./ccstatusline/.config/ccstatusline/settings.json).
+- This settings file then gets loaded up by the CC [`settings.json`](./claude/.claude/settings.json).
 
 # TODO:
 
