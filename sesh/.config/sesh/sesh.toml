@@ -40,6 +40,12 @@ startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
+name = "quartz"
+path = "~/Desktop/2. AREAS/Digital Garden/quartz"
+startup_command = "nvim content/index.md"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
 name = "brain"
 path = "~/Desktop/2. AREAS/Second Brain"
 startup_command = "ls"
