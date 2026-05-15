@@ -112,6 +112,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls="eza --icons -a"
 alias cat="bat --paging=never"
 alias vim="nvim"
+alias nv="nvim"
 alias lg="lazygit"
 alias y="yazi"
 
