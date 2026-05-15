@@ -113,8 +113,10 @@ alias ls="eza --icons -a"
 alias cat="bat --paging=never"
 alias vim="nvim"
 alias nv="nvim"
+alias n="nvim"
 alias lg="lazygit"
 alias y="yazi"
+alias cl="clear"
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
