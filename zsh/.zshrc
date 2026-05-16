@@ -109,14 +109,34 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# System Commands
+alias l="eza --icons -a"
 alias ls="eza --icons -a"
+
 alias cat="bat --paging=never"
-alias vim="nvim"
-alias nv="nvim"
-alias n="nvim"
-alias lg="lazygit"
-alias y="yazi"
+
 alias cl="clear"
+
+# Utilities
+alias open="yazi"
+alias y="yazi"
+
+# Neovim Commands
+alias n="nvim"
+alias nv="nvim"
+alias vim="nvim"
+
+# Git Commands
+alias lg="lazygit"
+
+alias gwa="git worktree add"
+alias gwl="git worktree list --porcelain"
+
+# Shell Commands
+alias nz="nvim ~/dotfiles/zsh/.zshrc"
+alias zo="nvim ~/dotfiles/zsh/.zshrc"
+alias zr="exec zsh"
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
