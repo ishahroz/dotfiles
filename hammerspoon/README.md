@@ -5,7 +5,7 @@
 We first need to run the following command to update the config location:
 
 ```bash
-defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon-config/init.lua"
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
 ```
 
 ## Key Bindings

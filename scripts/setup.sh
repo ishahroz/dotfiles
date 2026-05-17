@@ -8,7 +8,7 @@
 
 # Changing default Hammerspoon config location
 # Check this PR for more details: https://github.com/Hammerspoon/hammerspoon/issues/1734#issuecomment-379854489
-defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon-config/init.lua"
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
 
 
 ############# Key Repeat ##############
