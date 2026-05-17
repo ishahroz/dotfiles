@@ -7,6 +7,7 @@ return {
       sources = {
         explorer = { hidden = true },
         files = { hidden = true },
+        grep = { hidden = true },
       },
     },
   },
