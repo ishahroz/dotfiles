@@ -18,47 +18,35 @@ preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "home"
-path = "~"
+path = "$HOME"
 disable_startup_command = true
 
 [[session]]
 name = "dotfiles"
-path = "~/dotfiles"
-startup_command = "ls"
-preview_command = "eza --all --git --icons --color=always {}"
-
-[[session]]
-name = "hammerspoon"
-path = "~/.config/hammerspoon-config"
-startup_command = "git status"
-preview_command = "eza --all --git --icons --color=always {}"
-
-[[session]]
-name = "nvim"
-path = "~/dotfiles/config/.config/nvim"
+path = "$DOTFILES"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "quartz"
-path = "~/Desktop/2. AREAS/Digital Garden/quartz"
+path = "$AREAS/Digital Garden/quartz"
 startup_command = "nvim content/index.md"
 preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "brain"
-path = "~/Desktop/2. AREAS/Second Brain"
+path = "$AREAS/Second Brain"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "skilledin"
-path = "~/Desktop/1. PROJECTS/skilledin"
+path = "$PROJECTS/skilledin"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "gtdust"
-path = "~/Desktop/1. PROJECTS/gtdust"
+path = "$PROJECTS/gtdust"
 startup_command = "ls"
 preview_command = "eza --all --git --icons --color=always {}"
