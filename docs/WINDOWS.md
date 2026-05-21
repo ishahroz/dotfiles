@@ -1,14 +1,14 @@
 # Dotfiles Setup Guide for Windows + WSL
 
-The following guide was tested on `Windows 11 Pro`, and `Ubuntu-24.04` was the WSL distro.
+The following guide was tested on `Windows 11 Pro`, and `Ubuntu-24.04` was the WSL 2 distro.
 
 Personally, I love to use:
   - `Scoop` for managing packages and `Powershell` for scripting on **Windows side of things**
-  - `Nix` for managing packages and `Bash` for scripting on **WSL (Linux) side of things**
+  - `Nix` for managing packages and `Bash` for scripting on **WSL 2 (Linux) side of things**
 
 ## Windows Setup
 
-### WSL and Ubuntu
+### WSL 2 and Ubuntu
 
 1. Open `PowerShell` in **administrator** mode by right-clicking and selecting `Run as administrator`.
 
@@ -17,7 +17,9 @@ Personally, I love to use:
    wsl --install --no-distribution
    ```
 
-3. Install `Ubuntu-24.04` as the Linux distribution:
+3. Restart the system.
+
+4. Install `Ubuntu-24.04` as the Linux distribution:
 
    ```powershell
    wsl --install -d Ubuntu-24.04
