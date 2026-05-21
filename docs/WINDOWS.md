@@ -18,6 +18,12 @@ winver
 # System Type: ARM64-based PC
 ```
 
+```bash
+uname -m
+
+# aarch64
+```
+
 **Personally, I love to use**:
   - `Scoop` for managing packages and `Powershell` for scripting on **Windows side of things**
   - `Nix` for managing packages and `Bash` for scripting on **WSL 2 (Linux) side of things**
@@ -112,6 +118,11 @@ winver
 > Note: If the setup script fails for some reason, it is better to run the steps that failed, manually.
 
 3. Restart the system.
+
+### Emacs
+
+1. Follow step 5 and 6 in [Doom Setup](../doom/README.md#Setup) section.
+2. Follow [Troubleshooting](../doom/README.md#Troubleshooting) section for common issues like fonts not found, etc.
 
 ## WSL Setup
 
