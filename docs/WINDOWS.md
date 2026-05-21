@@ -80,7 +80,7 @@ Personally, I love to use:
    cd dotfiles
    ```
 
-2. **‼️ CRITICAL: Make sure you understand the [`windows-setup.ps1`](../scripts/windows-setup.ps1) script**. Run the script using the following command:
+2. **‼️ CRITICAL: Make sure you understand the [`windows-setup.ps1`](../scripts/windows-setup.ps1) script before running it** (*it mostly installs packages and sets up Doom Emacs* Run the script using the following command:
    ```powershell
    .\scripts\windows-setup.ps1
    ```
