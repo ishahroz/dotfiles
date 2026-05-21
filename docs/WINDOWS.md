@@ -74,7 +74,9 @@ Personally, I love to use:
    - Copy [`gruvbox_dark.json`](../ms-terminal/gruvbox_dark.json) and paste in the `schemes` array.
    - Click on "Save".
    - Go to your profile settings (e.g: `Ubuntu-24.04`) and set color scheme to "Gruvbox Dark" on the `Appearnace` page.
-   - Set cursor shape to "Bar", font size to "18" and font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
+   - Set cursor shape to "Bar".
+   - Set font size to "18".
+   - Set font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
 4. Click on "Save" and restart the Terminal.
 
 ### Dotfiles and One-Time Setup Script
