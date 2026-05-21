@@ -61,3 +61,19 @@ scoop install main/git
 ```
 
 2. Verify the installation by running: `git --version`.
+
+## Windows Setup
+
+1. Open `Powershell` and clone this `dotfiles` repository in the user directory:
+
+```powershell
+git clone https://github.com/ishahroz/dotfiles.git
+
+cd dotfiles
+```
+
+2. Run the `windows-setup` script:
+
+```powershell
+.\scripts\windows-setup.ps1
+```
