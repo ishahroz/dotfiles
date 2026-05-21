@@ -19,15 +19,26 @@ Write-Host "Scoop is installed." -ForegroundColor Green
 Write-Host ""
 Write-Host "Adding Scoop buckets..." -ForegroundColor Cyan
 
+scoop bucket add main
 scoop bucket add extras
 scoop bucket add nerd-fonts
 
 Write-Host ""
 Write-Host "Installing packages..." -ForegroundColor Cyan
 
-scoop install extras/emacs
-scoop install extras/vscode
-scoop install extras/notepadplusplus
+scoop install main/7zip                     # 7-Zip
+scoop install main/aws                      # AWS CLI
+scoop install main/azure-cli                # Azure CLI
+scoop install main/docker                   # Docker
+scoop install main/fzf                      # fzf (Fuzzy Finder)
+scoop install main/openssh                  # OpenSSH
+scoop install main/ripgrep                  # ripgrep
+
+scoop install extras/bruno                  # Bruno
+scoop install extras/emacs                  # Emacs
+scoop install extras/vscode                 # VSCode
+scoop install extras/notepadplusplus        # Notepad++
+
 scoop install nerd-fonts/ZedMono-NF
 
 Write-Host ""
