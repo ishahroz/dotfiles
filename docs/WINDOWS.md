@@ -71,7 +71,7 @@ Personally, I love to use:
    - Set cursor shape to "Bar", font size to "18" and font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
 4. Click on "Save" and restart the Terminal.
 
-### Packages / Dotfiles Setup
+### Dotfiles and One-Time Setup Script
 
 1. Open `Powershell` and clone this `dotfiles` repository in the user directory (`$HOME`):
    ```powershell
@@ -84,6 +84,8 @@ Personally, I love to use:
    ```powershell
    .\scripts\windows-setup.ps1
    ```
+
+> Note: If the setup script fails for some reason, it is better to run the steps that failed, manually.
 
 ## WSL Setup
 
