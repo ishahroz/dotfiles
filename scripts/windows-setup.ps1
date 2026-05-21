@@ -69,6 +69,37 @@ Write-Host "Scoop is installed." -ForegroundColor Green
 Write-Host ""
 
 # ==========================================
+# Scoop Packages Setup
+# ==========================================
+
+Write-Host "Adding Scoop buckets..." -ForegroundColor Cyan
+
+scoop bucket add main
+scoop bucket add extras
+scoop bucket add nerd-fonts
+
+Write-Host ""
+Write-Host "Installing packages..." -ForegroundColor Cyan
+
+scoop install main/7zip
+scoop install main/aws
+scoop install main/azure-cli
+scoop install main/docker
+scoop install main/fzf
+scoop install main/openssh
+scoop install main/ripgrep
+
+scoop install extras/bruno
+scoop install extras/emacs
+scoop install extras/vscode
+scoop install extras/notepadplusplus
+
+scoop install nerd-fonts/ZedMono-NF
+
+Write-Host ""
+Write-Host "Scoop packages installed." -ForegroundColor Green
+
+# ==========================================
 # Doom Emacs Setup
 # ==========================================
 
