@@ -2,13 +2,13 @@
 # Variables
 # ==========================================
 
-$HomePath = $HOME
+$HomePath = $env:USERPROFILE
 
 $EmacsPath      = Join-Path $HomePath ".emacs.d"
 $DoomConfigPath = Join-Path $HomePath ".doom.d"
 $DoomSource     = Join-Path ".\doom" ".doom.d"
 $DoomBin        = Join-Path $EmacsPath "bin"
-$DoomCmd = Join-Path $DoomBin "doom.ps1"
+$DoomCmd        = Join-Path $DoomBin "doom.ps1"
 
 $DoomRepoUrl = "https://github.com/doomemacs/doomemacs.git"
 
@@ -16,21 +16,34 @@ $DoomRepoUrl = "https://github.com/doomemacs/doomemacs.git"
 # Preflight
 # ==========================================
 
-Write-Host "Checking HOME path..." -ForegroundColor Cyan
+Write-Host "Checking USERPROFILE path..." -ForegroundColor Cyan
 
-if (-not $HOME) {
+if (-not $env:USERPROFILE) {
     Write-Host ""
-    Write-Host "ERROR: HOME environment variable is not set." -ForegroundColor Red
+    Write-Host "ERROR: USERPROFILE environment variable is not set." -ForegroundColor Red
     exit 1
 }
 
 if (-not (Test-Path $HomePath)) {
     Write-Host ""
-    Write-Host "ERROR: HOME path is invalid: $HomePath" -ForegroundColor Red
+    Write-Host "ERROR: USERPROFILE path is invalid: $HomePath" -ForegroundColor Red
     exit 1
 }
 
-Write-Host "HOME path detected: $HomePath" -ForegroundColor Green
+Write-Host "USERPROFILE path detected: $HomePath" -ForegroundColor Green
+Write-Host ""
+
+Write-Host "Setting HOME environment variable..." -ForegroundColor Cyan
+
+[Environment]::SetEnvironmentVariable(
+    "HOME",
+    $HomePath,
+    "User"
+)
+
+$env:HOME = $HomePath
+
+Write-Host "HOME set to: $env:HOME" -ForegroundColor Green
 Write-Host ""
 
 Write-Host "Checking Git installation..." -ForegroundColor Cyan
@@ -54,37 +67,6 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
 
 Write-Host "Scoop is installed." -ForegroundColor Green
 Write-Host ""
-
-# ==========================================
-# Scoop Packages Setup
-# ==========================================
-
-Write-Host "Adding Scoop buckets..." -ForegroundColor Cyan
-
-scoop bucket add main
-scoop bucket add extras
-scoop bucket add nerd-fonts
-
-Write-Host ""
-Write-Host "Installing packages..." -ForegroundColor Cyan
-
-scoop install main/7zip
-scoop install main/aws
-scoop install main/azure-cli
-scoop install main/docker
-scoop install main/fzf
-scoop install main/openssh
-scoop install main/ripgrep
-
-scoop install extras/bruno
-scoop install extras/emacs
-scoop install extras/vscode
-scoop install extras/notepadplusplus
-
-scoop install nerd-fonts/ZedMono-NF
-
-Write-Host ""
-Write-Host "Scoop packages installed." -ForegroundColor Green
 
 # ==========================================
 # Doom Emacs Setup
