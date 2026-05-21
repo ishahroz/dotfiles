@@ -80,7 +80,7 @@ Personally, I love to use:
    cd dotfiles
    ```
 
-2. Run the `windows-setup` script:
+2. Run the [`windows-setup.ps1`](../scripts/windows-setup.ps1) script:
    ```powershell
    .\scripts\windows-setup.ps1
    ```
