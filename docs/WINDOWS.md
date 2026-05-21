@@ -3,8 +3,8 @@
 The following guide was tested on `Windows 11 Pro`, and `Ubuntu-24.04` was the WSL distro.
 
 Personally, I love to use:
-  - **`Scoop` for managing packages and `Powershell` for scripting on Windows side of things**
-  - **`Nix` for managing packages and `Bash` for scripting on WSL (Linux) side of things**
+  - `Scoop` for managing packages and `Powershell` for scripting on **Windows side of things**
+  - `Nix` for managing packages and `Bash` for scripting on **WSL (Linux) side of things**
 
 ## Pre-requisite
 
