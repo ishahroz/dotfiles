@@ -1,8 +1,24 @@
 # Dotfiles Setup Guide for Windows + WSL
 
-The following guide was tested on `Windows 11 Pro`, and `Ubuntu-24.04` was the WSL 2 distro.
+The following guide was tested on `Windows 11 Pro (64 Bit)`, and `Ubuntu-24.04` was the WSL 2 distro.
 
-Personally, I love to use:
+```powershell
+$env:PROCESSOR_ARCHITECTURE
+
+# ARM64
+```
+
+```powershell
+winver
+
+# Windows 11 Pro
+# Version 24H2
+# OS Build 26100.4349
+# Architecture: ARM64
+# System Type: ARM64-based PC
+```
+
+**Personally, I love to use**:
   - `Scoop` for managing packages and `Powershell` for scripting on **Windows side of things**
   - `Nix` for managing packages and `Bash` for scripting on **WSL 2 (Linux) side of things**
 
@@ -94,6 +110,8 @@ Personally, I love to use:
    ```
 
 > Note: If the setup script fails for some reason, it is better to run the steps that failed, manually.
+
+3. Restart the system.
 
 ## WSL Setup
 
