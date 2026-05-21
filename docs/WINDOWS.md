@@ -121,8 +121,8 @@ uname -m
 
 ### Emacs
 
-1. Follow step 5 and 6 in [Doom Setup](../doom/README.md#Setup) section.
-2. Follow [Troubleshooting](../doom/README.md#Troubleshooting) section for common issues like fonts not found, etc.
+1. Follow step 5 and 6 in [Setup](../doom/README.md#Setup) section.
+2. Follow [Troubleshooting](../doom/README.md#Troubleshooting) section for common issues like font not found, etc.
 
 ## WSL Setup
 
