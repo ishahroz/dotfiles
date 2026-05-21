@@ -8,7 +8,7 @@ $EmacsPath      = Join-Path $HomePath ".emacs.d"
 $DoomConfigPath = Join-Path $HomePath ".doom.d"
 $DoomSource     = Join-Path ".\doom" ".doom.d"
 $DoomBin        = Join-Path $EmacsPath "bin"
-$DoomCmd = Join-Path $DoomBin "doom"
+$DoomCmd = Join-Path $DoomBin "doom.ps1"
 
 $DoomRepoUrl = "https://github.com/doomemacs/doomemacs.git"
 
