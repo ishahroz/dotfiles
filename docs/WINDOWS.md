@@ -6,30 +6,22 @@ Personally, I love to use:
   - `Scoop` for managing packages and `Powershell` for scripting on **Windows side of things**
   - `Nix` for managing packages and `Bash` for scripting on **WSL (Linux) side of things**
 
-## Pre-requisite
+## Windows Setup
 
 ### WSL and Ubuntu
 
 1. Open `PowerShell` in **administrator** mode by right-clicking and selecting `Run as administrator`.
+
 2. Run the following command to install WSL without installing a distribution:
    ```powershell
    wsl --install --no-distribution
    ```
+
 3. Install `Ubuntu-24.04` as the Linux distribution:
 
    ```powershell
    wsl --install -d Ubuntu-24.04
    ```
-
-### Terminal
-
-1. Make sure [`Windows Terminal`](https://github.com/microsoft/terminal) is installed on your Windows OS.
-2. Open Windows Terminal settings and set the following values:
-   - On the `Startup` page, set:
-     - Default Profile -> `Ubuntu-24.04`
-     - Default Terminal application -> `Windows Terminal`
-     - Launch parameters -> `Launch mode = Maximized`
-3. Click on "Save" and restart the Terminal.
 
 ### Scoop
 
@@ -52,10 +44,9 @@ Personally, I love to use:
 
 3. Verify the installation by running: `scoop --version`.
 
-### Install Git using Scoop
+### Git using Scoop
 
 1. Open `PowerShell` and run the following command:
-
    ```powershell
    scoop bucket add main
    scoop install main/git
@@ -63,9 +54,26 @@ Personally, I love to use:
 
 2. Verify the installation by running: `git --version`.
 
-## Windows Setup
+### Terminal
 
-1. Open `Powershell` and clone this `dotfiles` repository in the user directory:
+1. Make sure [`Windows Terminal`](https://github.com/microsoft/terminal) is installed on your Windows OS.
+
+2. Open Windows Terminal settings and set the following values:
+   - On the `Startup` page, set:
+     - Default Profile -> `Ubuntu-24.04`
+     - Default Terminal application -> `Windows Terminal`
+     - Launch parameters -> `Launch mode = Maximized`
+
+3. Click on "Open JSON File" in the bottom left corner:
+   - Copy [`gruvbox_dark.json`](./ms-terminal/gruvbox_dark.json) and paste in the `schemes` array.
+   - Click on "Save".
+   - Go to your profile settings (e.g: `Ubuntu-24.04`) and set color scheme to "Gruvbox Dark".
+   - Set cursor shape to "Bar", font size to "18" and font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
+4. Click on "Save" and restart the Terminal.
+
+### Packages / Dotfiles Setup
+
+1. Open `Powershell` and clone this `dotfiles` repository in the user directory (`$HOME`):
    ```powershell
    git clone https://github.com/ishahroz/dotfiles.git
 
@@ -73,17 +81,9 @@ Personally, I love to use:
    ```
 
 2. Run the `windows-setup` script:
-
    ```powershell
    .\scripts\windows-setup.ps1
    ```
-
-3. Open Windows Terminal settings and click on "Open JSON File" in the bottom left corner:
-   - Copy [`gruvbox_dark.json`](./ms-terminal/gruvbox_dark.json) and paste in the `schemes` array.
-   - Click on "Save".
-   - Go to your profile settings (e.g: `Ubuntu-24.04`) and set color scheme to "Gruvbox Dark".
-   - Set cursor shape to "Bar", font size to "18" and font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
-   - Click on "Save".
 
 ## WSL Setup
 
