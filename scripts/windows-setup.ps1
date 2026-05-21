@@ -103,7 +103,7 @@ else {
 Write-Host ""
 Write-Host "Running Doom install..." -ForegroundColor Cyan
 
-& $DoomCmd install --no-env
+"`n" | powershell -ExecutionPolicy Bypass -File $DoomCmd install --no-env
 
 Write-Host ""
 Write-Host "Copying Doom Emacs config..." -ForegroundColor Cyan
@@ -125,7 +125,7 @@ Write-Host "Doom Emacs config copied successfully." -ForegroundColor Green
 Write-Host ""
 Write-Host "Running Doom sync..." -ForegroundColor Cyan
 
-& $DoomCmd sync
+"`n" | powershell -ExecutionPolicy Bypass -File $DoomCmd sync
 
 Write-Host ""
 Write-Host "Adding Doom to User PATH..." -ForegroundColor Cyan
