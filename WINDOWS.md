@@ -77,3 +77,10 @@ cd dotfiles
 ```powershell
 .\scripts\windows-setup.ps1
 ```
+
+3. Open Windows Terminal settings and click on "Open JSON File" in the bottom left corner:
+  - Copy [`gruvbox_dark.json`](./ms-terminal/gruvbox_dark.json) and paste in the `schemes` array.
+  - Click on "Save".
+  - Go to your profile settings (e.g: `Ubuntu-24.04`) and set color scheme to "Gruvbox Dark".
+  - Set cursor shape to "Bar", font size to "18" and font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
+  - Click on "Save".
