@@ -101,6 +101,11 @@ else {
 }
 
 Write-Host ""
+Write-Host "Running Doom install..." -ForegroundColor Cyan
+
+& $DoomCmd install --no-env
+
+Write-Host ""
 Write-Host "Copying Doom Emacs config..." -ForegroundColor Cyan
 
 if (-not (Test-Path $DoomSource)) {
@@ -116,11 +121,6 @@ if (-not (Test-Path $DoomConfigPath)) {
 Copy-Item (Join-Path $DoomSource "*") $DoomConfigPath -Recurse -Force
 
 Write-Host "Doom Emacs config copied successfully." -ForegroundColor Green
-
-Write-Host ""
-Write-Host "Running Doom install..." -ForegroundColor Cyan
-
-& $DoomCmd install
 
 Write-Host ""
 Write-Host "Running Doom sync..." -ForegroundColor Cyan
