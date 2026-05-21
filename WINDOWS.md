@@ -91,28 +91,28 @@ cd dotfiles
 
 1. In Powershell, ensure you are running WSL version `0.67.6` or higher. Confirm it by running `wsl --version`.
 2. In WSL, make sure the following lines are added in `/etc/wsl.conf` (*you might need to run your editor with sudo privileges, e.g. `sudo nano /etc/wsl.conf`*):
-	```bash
-	[boot]
-	systemd=true
-	```
-  - Close all the WSL distro Windows and run `wsl --shutdown` from PowerShell to restart your WSL instances.
-  - Run the WSL distro again, you should have `systemd` running. You can confirm this by running:
+	 ```bash
+	 [boot]
+	 systemd=true
+	 ```
+   - Close all the WSL distro Windows and run `wsl --shutdown` from PowerShell to restart your WSL instances.
+   - Run the WSL distro again, you should have `systemd` running. You can confirm this by running:
 
-	  ```bash
-	  systemctl status
-	  ```
+	   ```bash
+	   systemctl status
+	   ```
 
 3. Install Nix for the multiuser (for WSL 2 with `systemd` support only), using the following command:
-	```bash
-	sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
-	```
-  **OR**
+	 ```bash
+	 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+	 ```
+   **OR**
 
-  Install Nix for the single-user (in case of WSL 1 with no `systemd` support), using the following command:
+   Install Nix for the single-user (in case of WSL 1 with no `systemd` support), using the following command:
 
-  ```bash
-  sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon
-  ```
+   ```bash
+   sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon
+   ```
 
 4. Restart the WSL shell again to load the changes.
 5. Verify the Nix installation by running: `nix --version`.
