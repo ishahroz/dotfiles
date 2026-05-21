@@ -76,7 +76,6 @@ Write-Host "Adding Scoop buckets..." -ForegroundColor Cyan
 
 scoop bucket add main
 scoop bucket add extras
-scoop bucket add nerd-fonts
 
 Write-Host ""
 Write-Host "Installing packages..." -ForegroundColor Cyan
@@ -93,8 +92,6 @@ scoop install extras/bruno
 scoop install extras/emacs
 scoop install extras/vscode
 scoop install extras/notepadplusplus
-
-scoop install nerd-fonts/ZedMono-NF
 
 Write-Host ""
 Write-Host "Scoop packages installed." -ForegroundColor Green
