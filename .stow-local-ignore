@@ -31,6 +31,9 @@ _darcs
 raycast\
 scripts\
 vscode\
+ms-terminal\
 
 Brewfile
 Makefile
+
+WINDOWS.md
