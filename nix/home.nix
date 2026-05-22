@@ -14,9 +14,6 @@ in
     ./modules/zoxide.nix
   ];
 
-  home.username = "ishahroz";
-  home.homeDirectory = "/home/ishahroz";
-
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = devPackages ++ cloudPackages ++ terminalPackages ++ essentialPackages;

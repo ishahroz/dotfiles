@@ -30,6 +30,19 @@ uname -m
 
 ## Windows Setup
 
+### User accounts
+
+Use `ishahroz` as the account username during setup:
+
+| Environment | Username | Home directory |
+| --- | --- | --- |
+| Windows | `ishahroz` | `C:\Users\ishahroz` |
+| WSL Ubuntu | `ishahroz` | `/home/ishahroz` |
+
+These dotfiles assume consistent user paths across Windows and WSL. If the
+machine is already set up with a different Windows username, prefer a clean
+setup over renaming the existing profile directory manually.
+
 ### WSL 2 and Ubuntu
 
 1. Open `PowerShell` in **administrator** mode by right-clicking and selecting `Run as administrator`.
@@ -46,6 +59,9 @@ uname -m
    ```powershell
    wsl --install -d Ubuntu-24.04
    ```
+
+5. When Ubuntu starts for the first time, create the Linux user as `ishahroz`.
+   The Nix Home Manager config assumes this username and `/home/ishahroz`.
 
 ### Scoop
 
@@ -105,6 +121,13 @@ uname -m
 
 1. Open `Powershell` and clone this `dotfiles` repository in the user directory (`$HOME`):
    ```powershell
+   $env:USERNAME
+   $HOME
+
+   # Expected:
+   # ishahroz
+   # C:\Users\ishahroz
+
    git clone https://github.com/ishahroz/dotfiles.git
 
    cd dotfiles
@@ -155,3 +178,23 @@ uname -m
 
 4. Restart the WSL shell again to load the changes.
 5. Verify the Nix installation by running: `nix --version`.
+6. Verify the Linux username and home directory:
+   ```bash
+   whoami
+   echo "$HOME"
+
+   # Expected:
+   # ishahroz
+   # /home/ishahroz
+   ```
+7. Enable the Nix flakes command support:
+   ```bash
+   mkdir -p ~/.config/nix
+   printf "experimental-features = nix-command flakes\n" > ~/.config/nix/nix.conf
+   ```
+8. Clone the dotfiles inside WSL and apply the Home Manager config:
+   ```bash
+   git clone https://github.com/ishahroz/dotfiles.git ~/dotfiles
+   nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
+   ```
+   Use `ishahroz-x86_64-linux` instead on Intel/AMD WSL.

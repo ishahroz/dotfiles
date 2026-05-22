@@ -11,11 +11,31 @@
       lg = "lazygit";
       ld = "lazydocker";
       y = "yazi";
-      hma = "home-manager switch --flake ~/dotfiles";
       hmo = "code ~/dotfiles";
       ga = "git add";
       gaa = "git add .";
       gs = "git status";
     };
+
+    initExtra = ''
+      hma() {
+        local system
+
+        case "$(uname -m)" in
+          x86_64)
+            system="x86_64-linux"
+            ;;
+          aarch64|arm64)
+            system="aarch64-linux"
+            ;;
+          *)
+            echo "Unsupported Linux architecture: $(uname -m)" >&2
+            return 1
+            ;;
+        esac
+
+        home-manager switch --flake "$HOME/dotfiles/nix#ishahroz-$system"
+      }
+    '';
   };
 }

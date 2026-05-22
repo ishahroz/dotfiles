@@ -13,19 +13,34 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfreePredicate =
-          pkg: builtins.elem (nixpkgs.lib.getName pkg) [ "terraform" ];
-      };
+      username = "ishahroz";
+
+      mkPkgs =
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfreePredicate =
+            pkg: builtins.elem (nixpkgs.lib.getName pkg) [ "terraform" ];
+        };
+
+      mkHome =
+        system:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = mkPkgs system;
+
+          modules = [
+            ./home.nix
+            {
+              home.username = username;
+              home.homeDirectory = "/home/${username}";
+            }
+          ];
+        };
     in
     {
-      homeConfigurations."ishahroz" =
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [ ./home.nix ];
-        };
+      homeConfigurations = {
+        "${username}-x86_64-linux" = mkHome "x86_64-linux";
+        "${username}-aarch64-linux" = mkHome "aarch64-linux";
+      };
     };
 }
