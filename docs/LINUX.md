@@ -1,6 +1,6 @@
 # Dotfiles Guide for Linux
 
-**I am using `Nix` for managing packages and `Bash` as the shell**.
+I am using `Nix` for managing packages and `Bash` as the shell.
 
 > The following guide was tested on `Ubuntu-24.04`.
 
