@@ -35,7 +35,7 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
    git clone https://github.com/ishahroz/dotfiles.git
    ```
 
-### Install Nix
+### Install Nix and Enable Flakes
 
 1. Install Nix for the multiuser, using the following command:
 	 ```bash
@@ -44,6 +44,23 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
 2. Restart the Terminal.
 
 3. Verify the Nix installation by running: `nix --version`.
+
+4. Enable experimental features `nix-command` and `flakes`:
+   ```bash
+   mkdir -p ~/.config/nix
+   printf "experimental-features = nix-command flakes\n" > ~/.config/nix/nix.conf
+   ```
+
+5. Restart the Nix daemon:
+   ```bash
+   sudo systemctl restart nix-daemon.service`
+   ```
+
+6. Verify that the experimental features `nix-command` and `flakes` are enabled:
+   ```bash
+   nix config show | grep flakes
+   nix config show | grep nix-command
+   ```
 
 ## Setup
 
@@ -64,15 +81,8 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
    uname -m
    ```
 
-3. Enable the Nix flakes command support:
+3. Apply the Home Manager config:
    ```bash
-   mkdir -p ~/.config/nix
-   printf "experimental-features = nix-command flakes\n" > ~/.config/nix/nix.conf
-   ```
-
-4. Clone the dotfiles inside WSL and apply the Home Manager config:
-   ```bash
-   git clone https://github.com/ishahroz/dotfiles.git ~/dotfiles
    nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
    ```
    Use `ishahroz-x86_64-linux` instead on Intel/AMD WSL.
