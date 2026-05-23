@@ -1,6 +1,10 @@
-# Dotfiles Setup Guide for Windows + WSL
+# Dotfiles Guide for Windows + WSL
 
-The following guide was tested on `Windows 11 Pro (64 Bit)`, and `Ubuntu-24.04` was the WSL 2 distro.
+I am using:
+  - `Scoop` for managing packages and `Powershell` as the shell for **Windows side of things**
+  - `Nix` for managing packages / system enivornments and `Bash` as the shell for **WSL 2 (Linux) side of things**
+
+> The following guide was tested on `Windows 11 Pro (64 Bit)` and `Ubuntu-24.04` as the WSL 2 distro. The user name was set as `ishahroz` for both Windows and WSL 2.
 
 ```powershell
 $env:PROCESSOR_ARCHITECTURE
@@ -24,24 +28,19 @@ uname -m
 # aarch64
 ```
 
-**Personally, I love to use**:
-  - `Scoop` for managing packages and `Powershell` for scripting on **Windows side of things**
-  - `Nix` for managing packages and `Bash` for scripting on **WSL 2 (Linux) side of things**
-
 ## Windows Setup
 
-### User accounts
+### User Accounts
 
-Use `ishahroz` as the account username during setup:
+This guide and repo assume `ishahroz` as the account username for both Windows and WSL 2:
 
 | Environment | Username | Home directory |
 | --- | --- | --- |
 | Windows | `ishahroz` | `C:\Users\ishahroz` |
 | WSL Ubuntu | `ishahroz` | `/home/ishahroz` |
 
-These dotfiles assume consistent user paths across Windows and WSL. If the
-machine is already set up with a different Windows username, prefer a clean
-setup over renaming the existing profile directory manually.
+
+> If the user name is different, make sure to update in the relevant files.
 
 ### WSL 2 and Ubuntu
 
@@ -61,7 +60,6 @@ setup over renaming the existing profile directory manually.
    ```
 
 5. When Ubuntu starts for the first time, create the Linux user as `ishahroz`.
-   The Nix Home Manager config assumes this username and `/home/ishahroz`.
 
 ### Scoop
 
@@ -149,6 +147,15 @@ setup over renaming the existing profile directory manually.
 
 ## WSL Setup
 
+### Clone Dotfiles
+
+1. Open `Terminal` and clone this `dotfiles` repository in the home directory (`$HOME`):
+   ```bash
+   git clone https://github.com/ishahroz/dotfiles.git
+   ```
+
+### Install Nix and Enable Flakes
+
 **Steps 1-2 are only applicable for WSL 2 because Systemd support is only available in WSL 2. Skip to Step 3 for WSL 1.**
 
 1. In Powershell, ensure you are running WSL version `0.67.6` or higher. Confirm it by running `wsl --version`.
@@ -176,9 +183,30 @@ setup over renaming the existing profile directory manually.
    sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon
    ```
 
-4. Restart the WSL shell again to load the changes.
+4. Restart the Terminal.
+
 5. Verify the Nix installation by running: `nix --version`.
-6. Verify the Linux username and home directory:
+
+6. Enable experimental features `nix-command` and `flakes`:
+   ```bash
+   mkdir -p ~/.config/nix
+   printf "experimental-features = nix-command flakes\n" > ~/.config/nix/nix.conf
+   ```
+
+7. Restart the Nix daemon (in WSL 2 case):
+   ```bash
+   sudo systemctl restart nix-daemon.service
+   ```
+
+8. Verify that the experimental features `nix-command` and `flakes` are enabled:
+   ```bash
+   nix config show | grep flakes
+   nix config show | grep nix-command
+   ```
+
+### Setup
+
+1. Confirm the Linux username and home directory:
    ```bash
    whoami
    echo "$HOME"
@@ -187,14 +215,25 @@ setup over renaming the existing profile directory manually.
    # ishahroz
    # /home/ishahroz
    ```
-7. Enable the Nix flakes command support:
+
+> If the user name is different, make sure to update in the relevant files.
+
+2. Check the hardware architecture:
    ```bash
-   mkdir -p ~/.config/nix
-   printf "experimental-features = nix-command flakes\n" > ~/.config/nix/nix.conf
+   uname -m
    ```
-8. Clone the dotfiles inside WSL and apply the Home Manager config:
+
+3. Apply the Home Manager config:
+   - For `aarch64`:
+     ```bash
+     nix run home-manager/master -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
+     ```
+   - For `x86_64`:
+     ```bash
+     nix run home-manager/master -- switch --flake ~/dotfiles/nix#ishahroz-x86_64-linux
+     ```
+
+4. If you get any error where Home Manager refuses to overwrite existing files and asks for the backup first, just add `-b backup` flag:
    ```bash
-   git clone https://github.com/ishahroz/dotfiles.git ~/dotfiles
-   nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
+   nix run home-manager/master -- switch -b backup --flake ~/dotfiles/nix#ishahroz-aarch64-linux
    ```
-   Use `ishahroz-x86_64-linux` instead on Intel/AMD WSL.
