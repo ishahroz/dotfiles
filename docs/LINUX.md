@@ -7,9 +7,9 @@ I am using `Nix` for managing packages / system enivornments and `Bash` as the s
 
 | Command | Output |
 | -------------- | --------------- |
-| `uname -m` | aarch64 |
-| whoami | ishahroz |
-| echo "$HOME"  | /home/ishahroz |
+| `uname -m` | `aarch64` |
+| `whoami` | `ishahroz` |
+| `echo "$HOME"`  | `/home/ishahroz` |
 
 
 ## Prerequisites
