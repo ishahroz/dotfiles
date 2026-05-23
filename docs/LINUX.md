@@ -91,3 +91,7 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
      nix run home-manager/master -- switch --flake ~/dotfiles/nix#ishahroz-x86_64-linux
      ```
 
+4. If you get any error where Home Manager refuses to overwrite existing files and asks for the backup first, just add `-b backup` flag:
+   ```bash
+   nix run home-manager/master -- switch -b backup --flake ~/dotfiles/nix#ishahroz-aarch64-linux
+   ```
