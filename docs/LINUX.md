@@ -1,6 +1,6 @@
 # Dotfiles Guide for Linux
 
-I am using `Nix` for managing packages / system enivornments and `Bash` as the shell.
+I am using `Nix` for managing packages / system enivornments, and `Bash` as the shell.
 
 > The following guide was tested on `Ubuntu-24.04`, and the user name was set as `ishahroz`.
 
@@ -22,7 +22,11 @@ I am using `Nix` for managing packages / system enivornments and `Bash` as the s
    sudo apt install curl
    ```
 
-2. Verify the installation by running: `git --version`.
+2. Verify the installation:
+   ```bash
+   git --version
+   curl --version
+   ```
 
 ### Clone Dotfiles
 
