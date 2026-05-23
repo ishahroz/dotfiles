@@ -84,10 +84,10 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
 3. Apply the Home Manager config:
    - For `aarch64`:
      ```bash
-     nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
+     nix run home-manager/master -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
      ```
    - For `x86_64`:
      ```bash
-     nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-x86_64-linux
+     nix run home-manager/master -- switch --flake ~/dotfiles/nix#ishahroz-x86_64-linux
      ```
 
