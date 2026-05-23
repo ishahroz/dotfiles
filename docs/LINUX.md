@@ -1,58 +1,49 @@
 # Dotfiles Guide for Linux
 
-I am using `Nix` for managing packages and `Bash` as the shell.
+I am using `Nix` for managing packages / system enivornments and `Bash` as the shell.
 
-> The following guide was tested on `Ubuntu-24.04`.
+> The following guide was tested on `Ubuntu-24.04`, and the user name was set as `ishahroz`.
 
-```bash
-uname -m
 
-# aarch64
-```
+| Command | Output |
+| -------------- | --------------- |
+| `uname -m` | aarch64 |
+| whoami | ishahroz |
+| echo "$HOME"  | /home/ishahroz |
+
 
 ## Prerequisites
 
-This guide assumes the user name is set as `ishahroz`. If the user name is different, make sure to update in the relevant files.
+### Install Essentials Packages
 
-```bash
-echo $USER
-
-# ishahroz
-```
-
-```bash
-echo $HOME
-
-# /home/ishahroz
-```
-
-## Install Git
-
-1. Open `PowerShell` and run the following command:
+1. Open `Terminal` and run the following commands:
    ```bash
    sudo apt install git
+   sudo apt install curl
    ```
 
 2. Verify the installation by running: `git --version`.
 
-## Dotfiles
+### Clone Dotfiles
 
 1. Open `Terminal` and clone this `dotfiles` repository in the home directory (`$HOME`):
    ```bash
    git clone https://github.com/ishahroz/dotfiles.git
-
-   cd dotfiles
    ```
 
-## Nix
+### Install Nix
 
-1. Install Nix for the multiuser (for WSL 2 with `systemd` support only), using the following command:
+1. Install Nix for the multiuser, using the following command:
 	 ```bash
 	 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
 	 ```
-2. Restart the WSL shell again to load the changes.
+2. Restart the Terminal.
+
 3. Verify the Nix installation by running: `nix --version`.
-4. Verify the Linux username and home directory:
+
+## Setup
+
+1. Confirm the Linux username and home directory:
    ```bash
    whoami
    echo "$HOME"
@@ -61,12 +52,21 @@ echo $HOME
    # ishahroz
    # /home/ishahroz
    ```
-5. Enable the Nix flakes command support:
+
+> If the user name is different, make sure to update in the relevant files.
+
+2. Confirm the hardware architecture:
+   ```bash
+   uname -m
+   ```
+
+3. Enable the Nix flakes command support:
    ```bash
    mkdir -p ~/.config/nix
    printf "experimental-features = nix-command flakes\n" > ~/.config/nix/nix.conf
    ```
-6. Clone the dotfiles inside WSL and apply the Home Manager config:
+
+4. Clone the dotfiles inside WSL and apply the Home Manager config:
    ```bash
    git clone https://github.com/ishahroz/dotfiles.git ~/dotfiles
    nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
