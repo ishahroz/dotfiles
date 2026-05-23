@@ -76,13 +76,18 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
 
 > If the user name is different, make sure to update in the relevant files.
 
-2. Confirm the hardware architecture:
+2. Check the hardware architecture:
    ```bash
    uname -m
    ```
 
 3. Apply the Home Manager config:
-   ```bash
-   nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
-   ```
-   Use `ishahroz-x86_64-linux` instead on Intel/AMD WSL.
+   - For `aarch64`:
+     ```bash
+     nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-aarch64-linux
+     ```
+   - For `x86_64`:
+     ```bash
+     nix run github:nix-community/home-manager -- switch --flake ~/dotfiles/nix#ishahroz-x86_64-linux
+     ```
+
