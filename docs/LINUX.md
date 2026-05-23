@@ -53,7 +53,7 @@ I am using `Nix` for managing packages / system enivornments, and `Bash` as the 
 
 5. Restart the Nix daemon:
    ```bash
-   sudo systemctl restart nix-daemon.service`
+   sudo systemctl restart nix-daemon.service
    ```
 
 6. Verify that the experimental features `nix-command` and `flakes` are enabled:
