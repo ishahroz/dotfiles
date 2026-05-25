@@ -5,5 +5,5 @@ with pkgs; [
   eza
   bat
   sesh
-  yazi
+  ripgrep
 ]

@@ -8,15 +8,21 @@ let
 in
 {
   imports = [
-    ./modules/git.nix
-    ./modules/bash.nix
-    ./modules/starship.nix
-    ./modules/zoxide.nix
+    ./config/git.nix
+    ./config/bash.nix
+    ./config/neovim.nix
+    ./config/starship.nix
+    ./config/zoxide.nix
+    ./config/yazi.nix
   ];
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  home.packages = devPackages ++ cloudPackages ++ terminalPackages ++ essentialPackages;
+  home.packages =
+    devPackages
+    ++ cloudPackages
+    ++ terminalPackages
+    ++ essentialPackages;
 
   home.file = {
   };

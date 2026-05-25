@@ -113,6 +113,7 @@ This guide and repo assume `ishahroz` as the account username for both Windows a
    - Set cursor shape to "Bar".
    - Set font size to "18".
    - Set font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
+   - Set window padding to "0".
 4. Click on "Save" and restart the Terminal.
 
 ### Dotfiles and One-Time Setup Script
