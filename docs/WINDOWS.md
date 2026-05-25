@@ -115,6 +115,7 @@ setup over renaming the existing profile directory manually.
    - Set cursor shape to "Bar".
    - Set font size to "18".
    - Set font face to "ZedMono Nerd Font" (after clicking on "Show all fonts").
+   - Set window padding to "0".
 4. Click on "Save" and restart the Terminal.
 
 ### Dotfiles and One-Time Setup Script
