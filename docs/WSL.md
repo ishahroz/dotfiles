@@ -1,5 +1,16 @@
 # Dotfiles Guide for WSL
 
+I am using `Nix` for managing packages / system enivornments and `Bash` as the shell for **WSL 2 (Linux) side of things**
+
+> The following guide was tested on `Ubuntu-24.04` as the WSL 2 distro. The user name was set as `ishahroz` for WSL 2.
+
+```bash
+uname -m
+
+# x86_64
+```
+
+
 ## Prerequisites
 
 ### Clone Dotfiles
@@ -8,6 +19,10 @@
    ```bash
    git clone https://github.com/ishahroz/dotfiles.git
    ```
+
+### Update Nix Files
+
+1. Update user name and user email in [`git.nix`](../nix/config/git.nix).
 
 ### Install Nix and Enable Flakes
 

@@ -17,6 +17,7 @@ _darcs
 \.git
 \.gitignore
 \.gitmodules
+\.DS_Store
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
@@ -28,12 +29,12 @@ _darcs
 
 ################# Personally managed list ##################
 
-raycast\
-scripts\
-vscode\
-ms-terminal\
-
-Brewfile
-Makefile
-
-docs\
+^/alacritty
+^/docs
+^/ms-terminal
+^/nix
+^/scripts
+^/vscode
+^/Brewfile
+^/Makefile
+^/Justfile

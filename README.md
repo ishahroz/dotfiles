@@ -12,8 +12,6 @@ There is a concept of packages in GNU Stow. Where we can consolidate files relat
 
 Stow is smart enough to know what a package is and how to create symlinks for those packages. 
 
-To create symlinks for all the packages and files, we can just run `stow .` (I have not tested this myself, maybe will try when I next do a fresh install of macOS or new machine).
-
 ## Homebrew
 
 I mainly use [Homebrew](https://brew.sh/) for installing most of the system applications and utilities.

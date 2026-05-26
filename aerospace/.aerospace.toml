@@ -38,118 +38,100 @@ outer.right =      0
 # =================================================================
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.rdc.macos'			# Windows App - Remote RDP Connections (Eva mainly)
+if.app-id = 'com.microsoft.rdc.macos'                     # Windows App - Remote RDP Connections (Eva mainly)
 run = 'move-node-to-workspace Eva'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'				# Apple Mail
+if.app-id = 'com.apple.mail'                              # Apple Mail
 run = ['layout floating', 'move-node-to-workspace Mail']
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'			# MS Outlook
+if.app-id = 'com.microsoft.Outlook'                       # MS Outlook
 run = ['layout floating', 'move-node-to-workspace Mail']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Notes'				# Apple Notes
+if.app-id = 'com.apple.Notes'                             # Apple Notes
 run = ['layout floating', 'move-node-to-workspace Notes']
 
 [[on-window-detected]]
-if.app-id = 'md.obsidian'				# Obsidian
+if.app-id = 'md.obsidian'                                # Obsidian
 run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
-if.app-id = 'notion.id'					# Notion
+if.app-id = 'notion.id'                                 # Notion
 run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
-if.app-id = 'com.usebruno.app'				# Bruno
+if.app-id = 'com.usebruno.app'                          # Bruno
 run = 'move-node-to-workspace API'
 
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome'				# Google Chrome
+if.app-id = 'com.google.Chrome'                         # Google Chrome
 run = 'move-node-to-workspace Browser'
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.floorp'			# Floorp
-run = 'move-node-to-workspace Browser'
-
-[[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'			# WhatsApp
+if.app-id = 'net.whatsapp.WhatsApp'                     # WhatsApp
 run = 'move-node-to-workspace Social'
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'			# Slack
+if.app-id = 'com.tinyspeck.slackmacgap'                 # Slack
 run = 'move-node-to-workspace Work'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'			# MS Teams
+if.app-id = 'com.microsoft.teams2'                      # MS Teams
 run = 'move-node-to-workspace Work'
 
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'				# Discord
+if.app-id = 'com.hnc.Discord'                           # Discord
 run = 'move-node-to-workspace Social'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.iCal'				# Apple Calendar
+if.app-id = 'com.apple.iCal'                           # Apple Calendar
 run = 'move-node-to-workspace 9-Planner'
 
 [[on-window-detected]]
-if.app-id = 'com.culturedcode.ThingsMac'		# Things 3
+if.app-id = 'com.culturedcode.ThingsMac'              # Things 3
 run = 'move-node-to-workspace 9-Planner'
 
 [[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'			# iTerm2 
+if.app-id = 'com.googlecode.iterm2'                  # iTerm2 
 run = 'move-node-to-workspace Terminal'
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'			# Ghostty
+if.app-id = 'com.mitchellh.ghostty'                 # Ghostty
 run = 'move-node-to-workspace Terminal'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'			# VS Code
+if.app-id = 'com.microsoft.VSCode'                  # VS Code
 run = ['layout floating', 'move-node-to-workspace Editor']
 
 [[on-window-detected]]
-if.app-id = 'com.jetbrains.pycharm'			# PyCharm
-run = ['layout floating', 'move-node-to-workspace PyCharm']
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.intellij'			# IntelliJ IDEA 
-run = ['layout floating', 'move-node-to-workspace IntelliJ']
-
-[[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'		# Cursor
-run = ['layout floating', 'move-node-to-workspace Editor']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'				# Finder
+if.app-id = 'com.apple.finder'                      # Finder
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.ActivityMonitor'			# Activity Monitor
+if.app-id = 'com.apple.ActivityMonitor'            # Activity Monitor
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'		# System Settings / Preferences
+if.app-id = 'com.apple.systempreferences'         # System Settings / Preferences
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.raycast.macos'				# Raycast
+if.app-id = 'com.raycast.macos'                   # Raycast
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'org.hammerspoon.Hammerspoon'		# Hammerspoon
+if.app-id = 'org.hammerspoon.Hammerspoon'         # Hammerspoon
 run = ['layout floating']
 
-# [[on-window-detected]]
-# if.app-id = 'com.upwork.Upwork'               		# Upwork Tracker
-# run = ['layout floating', 'move-node-to-workspace Work']
-
-[[on-window-detected]]					# Make all the other applications / windows float in 0-Other Workspace
+# Make all the other applications / windows float in 0-Other Workspace
+[[on-window-detected]]
 check-further-callbacks = true
 run = ['layout floating', 'move-node-to-workspace 0-Other']
 
-[workspace-to-monitor-force-assignment]			# In case of multiple monitors, force assign each workspace to a specific monitor
+# In case of multiple monitors, force assign each workspace to a specific monitor
+[workspace-to-monitor-force-assignment]
 Browser = 'secondary'
 Terminal = 'secondary'
 Editor = 'secondary'
@@ -158,4 +140,3 @@ Mail = 'main'
 Social = 'main'
 Eva = 'secondary'
 API = 'secondary'
-
